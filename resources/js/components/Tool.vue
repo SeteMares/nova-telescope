@@ -2,12 +2,11 @@
 export default {
     data: function () {
         return {
-            path: "",
+            path: "telescope",
         };
     },
 
     created() {
-        this.getPath();
     },
 
     computed: {
@@ -18,14 +17,7 @@ export default {
     },
 
     methods: {
-        getPath: function () {
-            var self = this;
 
-            Nova.request().get("/genealabs/nova-telescope/path")
-                .then(function (response) {
-                    self.path = response.data;
-                });
-        },
     },
 }
 </script>
@@ -36,7 +28,7 @@ export default {
         class="w-full"
         frameborder="0"
         scrolling="auto"
-    ></iframe>
+    />
 </template>
 
 <style scoped lang="scss">
